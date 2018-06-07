@@ -1,0 +1,14 @@
+body {
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+form {
+    float: right;
+}
+
+#gif-viewer {
+    clear: both;   
+    margin-top: 20px;
+}
+
