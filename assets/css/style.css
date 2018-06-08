@@ -1,5 +1,5 @@
 body {
-    max-width: 1020px;
+    max-width: 1280px;
     margin: 20px auto;
     background: url(../images/old\ TV.jpg) left top no-repeat;
     /* background-size: cover; */
@@ -26,4 +26,10 @@ form {
 
  .card {
      opacity: .8;
+ }
+
+ .gifCard {
+     width: 18rem;
+     float: left;
+     margin: 0px 10px 10px 0px;
  }
