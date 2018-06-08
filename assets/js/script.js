@@ -19,16 +19,33 @@ $(document).ready(function () {
 
             // Clear the div before loading a new search
             $("#gif-viewer").empty();
-            
-            for (var a = 0; a < subject.length; a++) {    
+
+            for (var j = 0; j < subject.length; j++) {
+
+                let gifData = response.data[j];
                 
-                let gifStill = response.data[a].images.fixed_height_still.url;
-                let gifPlay = response.data[a].images.fixed_height.url;
-                let gifImg = $("<img>").attr("data-state");
-                $("#gif-viewer").append(gifImg);
-                $(gifImg).hover(function() {
-                    console.log("click");
-                    $(this).attr("src", gifPlay);
+                //Grab URL of still and animated
+                let gifStill = gifData.images.fixed_height_still.url;
+                let gifPlay = gifData.images.fixed_height.url;
+
+                // Add img tag with attribute of source and var to find it
+                let gifImg = $("<img>").attr("src", gifStill);
+                // gifImg = $("<img>").attr("data-state");
+
+                let gifRating = gifData.rating;
+                gifRating = $('<p>').text("Rating: " + gifRating);
+                
+                // Append image and rating to the div with id of gif-viewer
+                $("#gif-viewer").append(gifImg, gifRating);
+                
+                $(gifImg).hover(function () {
+                    // console.log("click");
+                    if (true) {
+                        $(this).attr("src", gifPlay);
+                    }
+                    else {
+                        $(this).attr("src", gifStill)
+                    };
                 });
 
                 renderBtn();
@@ -48,13 +65,14 @@ $(document).ready(function () {
             // Then dynamically generate buttons for each GIF (jQuery automatically creates beginning and end tags)
             let a = $("<button>");
             // Adds class
-            a.addClass("gif");
+            a.addClass("gif").addClass("btn btn-outline-info");
             // Adds a data-attribute
-            a.attr("data-name", subject[i]);
+            a.attr("data-name", subject[i]).attr("type", "button");
             // Inputs text of subject
             a.text(subject[i]);
             // Appends button to the button div
             $("#gif-buttons").append(a);
+            $("#gif-input").empty();
         }
     }
 
@@ -62,11 +80,11 @@ $(document).ready(function () {
     $("#add-gif").on("click", function (event) {
 
         event.preventDefault();
-        
+
         var gif = $("#gif-input").val().trim();
-        
+
         subject.push(gif);
-        
+
         renderBtn();
     });
 

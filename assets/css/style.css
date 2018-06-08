@@ -1,14 +1,29 @@
 body {
-    max-width: 960px;
+    max-width: 1020px;
     margin: 20px auto;
+    background: url(../images/old\ TV.jpg) left top no-repeat;
+    /* background-size: cover; */
+}
+.jumbotron {
+    overflow: auto;
+    background-color: #16315b;
+    opacity: .9;
+    margin-bottom: 0px;
 }
 
 form {
-    float: right;
+    float: left;
+    margin-right: 20px;
 }
 
 #gif-viewer {
     clear: both;   
-    margin-top: 20px;
+    margin: 20px;
 }
+ .gif {
+     margin: 2.5px;
+ }
 
+ .card {
+     opacity: .8;
+ }

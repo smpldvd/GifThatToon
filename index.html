@@ -9,22 +9,38 @@
         crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
-    <form id="gif-form">
-        <label for="gif-input">Add Your Own GIf</label><br>
-        <input type="text" id="gif-input"><br>
-        <input id="add-gif" type="submit" value="Add!">
-    </form>
-    
-    <div id="gif-buttons"></div>
-    
-    <div id="gif-viewer"></div>
+
+    <div class="container">
+        <div class="jumbotron text-white">
+            <h1 class="display-4">Simple ToonTastic Gif Bank</h1>
+            <hr class="my-4 text">
+            <form>
+                <div class="form-group">
+                    <label for="searchQuery">Add Your Own</label>
+                    <input type="email" class="form-control" id="gif-input" placeholder="The Tick">
+                </div>
+                <button type="button" class="btn btn-outline-light" id="add-gif">
+                    <span class="fa fa-search-plus" aria-hidden="true"></span> Add!
+                </button>
+            </form>
+
+            <div id="gif-buttons"></div>
+        </div>
+
+        <div class="card">
+            <h5 class="card-header">Top Ten</h5>
+            <div class="card-body" id="gif-viewer">
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
