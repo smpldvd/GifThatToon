@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         let $q = $(this).attr("data-name");
         let $apiKey = "wBIzukv6ZqgmL9LunKnFtolO0DZxGKzm";
-        let queryURL = `https://api.giphy.com/v1/gifs/search?q=${$q}&limit=12&api_key=${$apiKey}`;
+        let queryURL = `https://api.giphy.com/v1/gifs/search?q=${$q}&limit=10&api_key=${$apiKey}`;
 
         $.ajax({
             url: queryURL,
@@ -20,13 +20,15 @@ $(document).ready(function () {
             // Clear the div before loading a new search
             $("#gif-viewer").empty();
 
-            for (var j = 0; j < 12; j++) {
+            for (var j = 0; j < 10; j++) {
 
                 let gifData = response.data[j];
                 
                 //Grab URL of still and animated
                 let gifStill = gifData.images.fixed_height_still.url;
+                // $(gifStill).data('still');
                 let gifPlay = gifData.images.fixed_height.url;
+                // $(gifPlay).data('play');
                 
                 // Add img tag with attribute of source and var to find it
                 let gifImg = $("<img>").attr("src", gifStill);
@@ -105,4 +107,5 @@ $(document).ready(function () {
 
     // Calls funcation to display initial buttons
     renderBtn();
+
 })

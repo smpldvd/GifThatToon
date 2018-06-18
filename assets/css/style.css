@@ -6,8 +6,7 @@ body {
 }
 .jumbotron {
     overflow: auto;
-    background-color: #16315b;
-    opacity: .9;
+    background-color: rgba(16, 34, 66, 0.9);
     margin-bottom: 0px;
 }
 
@@ -20,16 +19,18 @@ form {
     clear: both;   
     margin: 20px;
 }
- .gif {
-     margin: 2.5px;
- }
 
- .card {
-     opacity: .8;
- }
+#holder {
+    background-color: rgba(215, 223, 245, 0.9);
+}
+
+.gif {
+    margin: 2.5px;
+}
 
  .gifCard {
      width: 18rem;
      float: left;
      margin: 0px 10px 10px 0px;
+     opacity: unset;
  }
